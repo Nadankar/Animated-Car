@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+    animation:shakeBody linear .5s infinite;
+}
+#sky{
+    background-image: url("background.jpg");
+    height:100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+.trees{
+    background-image:url("trees.png");
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+}
+
+.track{
+    background-image:url("track.png");
+    height: 15vh;
+    width: 1000vw;
+    background-repeat:repeat-x;
+    /* background-size: cover; */
+    position: absolute;
+    top: 85%;
+    animation:carMove linear 15s infinite;
+}
+.car{
+    background-image: url("car_body.png");
+    height:100px;
+    width: 350px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 77%;
+    left: 30%;
+    animation:shake linear 3s infinite;
+    
+}
+
+.wheel1{
+    height: 70px;
+    width:70px;
+    position:relative;
+    background-image: url("car_wheel_right.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 219px;
+    top:36px;
+    animation:wheelRotation  linear 0.7s infinite ;
+}
+.wheel2{
+    height: 70px;
+    width:70px;
+    position:relative;
+    background-image: url("car_wheel_left.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 40px;
+    bottom:40px;
+    animation:wheelRotation  linear 0.7s infinite;
+
+}
+@keyframes wheelRotation{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes carMove{
+    100%{
+        transform:translateX(-500vw);
+    }
+}
+@keyframes shake{
+    0%{
+        transform: translateY(-2px);
+    }
+    50%{
+        transform:translateY(2px) ;
+    }
+    100%{
+        transform: translateX(-2px);
+    }
+}
+@keyframes shakeBody{
+    0%{
+        transform: translateY(-2px);
+    }
+    50%{
+        transform:translateY(2px) ;
+    }
+    100%{
+        transform: translateX(-2px);
+    }
+}
